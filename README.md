@@ -37,7 +37,7 @@ RECEIVE_BOOT_COMPLETED, to restore geofences on boot
 
 # Supported Java and Kotlin
 
-Initialize the SDK in your Application class before calling any other Radar methods. In onCreate(), call:
+Initialize the SDK in your Application class before calling any other methods. In onCreate(), call:
 
 ```
 Local.initialize(publishableKey)
