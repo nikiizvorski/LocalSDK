@@ -86,6 +86,10 @@ Local.ERROR_PERMISSIONS: the user has not granted location permissions for the a
 Local().startTracking(add callback) and Local().stopTracking()
 ```
 
+# The SDK Size and ProGuard Rules:
+
+SDK size is 150kb and its ProGuard Friendly
+
 # Next to be added in the library would be on request Background Tracking which would be simple with a JobService and a Receiver and Geofences.
 
 This is a test configuration for a SDK. It doesn't have a production setup. If you need production setup please let me know and i can do it depending on the services and end result that you need. Also architecture is to minimum for size and integration problems with other people dependecy management with Dagger etc...No need to exclude libraries after.
