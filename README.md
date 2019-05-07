@@ -81,10 +81,9 @@ Local.ERROR_PERMISSIONS: the user has not granted location permissions for the a
 ```
 
 # Tracking the user constantly with the following call:
-
-```
 Tracking should work as expected in background also. This means that when your app is in background it will still send location updates to you but with a limited time frame a couple updates when possible. Its compolient with the newest APIs requirements.
 
+```
 Local().startTracking(add callback) and Local().stopTracking()
 ```
 
