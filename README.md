@@ -1,7 +1,8 @@
 # LocalSDK
 Location Tracking Library written in Kotlin to easy the process of location tracking. it's compatible with the latest Android API. 
 
-# Configure project
+Configure project
+---------------
 Add the following lines to the application:
 ```
 allprojects {
@@ -27,15 +28,18 @@ dependencies {
   
 ```
 
-# Local requires the following permissions, included automatically by the SDK manifest:
+Local requires the following permissions
+---------------
 
+They are included automatically by the SDK manifest:
 ```
 ACCESS_FINE_LOCATION, for location services
 INTERNET and ACCESS_NETWORK_STATE, to send API requests
 RECEIVE_BOOT_COMPLETED, to restore geofences on boot
 ```
 
-# Supported Java and Kotlin
+Supported Java and Kotlin
+---------------
 
 Initialize the SDK in your Application class before calling any other methods. In onCreate(), call:
 
@@ -45,34 +49,43 @@ Local.initialize(publishableKey)
 
 where publishableKey is a string containing your publishable API key.
 
-# To identify the user when logged in, call:
+To identify the user when logged in, call:
+---------------
 
 ```
 Local().setUserId and Local().getUserId
 ```
 
-# To set the tracking priority:
+To set the tracking priority:
+---------------
 
 ```
 Local().setTrackingPriority(Local.LocalPriority.RESPONSIVE), Local().setTrackingPriority(Local.LocalPriority.EFFICIENT)
 ```
 
-# Request permissions
+Request permissions
+---------------
+
 Permission Request is done with the following method its done for user convinience. You have two methods: 
 
 ```
 Local().requestPermissions() and Local().checkSelfPermissions()
 ```
 
-# Tracking options
+Tracking options
+---------------
+
 Once you have initialized the SDK, you have identified the user, and the user has granted permissions, you can track the user's location.
 
-# To track the user's location and get last known location and get it once use this call:
+To track the user's location and get last known location and get it once use this call:
+---------------
+
 ```
 Local().trackOnce(add callback)
 ```
 
-# The request status can be:
+The request status can be:
+---------------
 
 ```
 Local.SUCCESS: the request succeeded
@@ -80,19 +93,26 @@ Local.ERROR_PUBLISHABLE_KEY: the SDK was not initialized
 Local.ERROR_PERMISSIONS: the user has not granted location permissions for the app
 ```
 
-# Tracking the user constantly with the following call:
+Tracking the user constantly with the following call:
+---------------
+
 Tracking should work as expected in background also. This means that when your app is in background it will still send location updates to you but with a limited time frame a couple updates when possible. Its compolient with the newest APIs requirements.
 
 ```
 Local().startTracking(add callback) and Local().stopTracking()
 ```
 
-# The SDK Size and ProGuard Rules:
+The SDK Size and ProGuard Rules:
+---------------
 
 SDK size is 150kb and its ProGuard Friendly
 
-# Next to be added in the library would be Geofences. And maybe some improvements on specific use-case for Location Tracking on newer APIs.
+Roadmap
+---------------
+Next to be added in the library would be Geofences. And maybe some improvements on specific use-case for Location Tracking on newer APIs
 
+Info
+---------------
 This is a test configuration for a SDK. It doesn't have a production setup. If you need production setup please let me know and i can do it depending on the services and end result that you need. Also architecture is to minimum for size and integration problems with other people dependecy management with Dagger etc...No need to exclude libraries after. That can be added also. 
 
 
